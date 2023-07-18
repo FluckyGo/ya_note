@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import generic
@@ -23,7 +24,9 @@ class NoteBase(LoginRequiredMixin):
 
     def get_queryset(self):
         """Пользователь может работать только со своими заметками."""
-        return self.model.objects.filter(author=self.request.user)
+        return self.model.objects.filter(
+            author=self.request.user
+        )
 
 
 class NoteCreate(NoteBase, generic.CreateView):
