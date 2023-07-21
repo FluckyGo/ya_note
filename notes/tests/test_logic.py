@@ -32,7 +32,7 @@ class TestNoteCreation(TestCase):
         notes_count = Note.objects.count()
         self.assertEqual(notes_count, 0)
 
-    def test_user_can_create_comment(self):
+    def test_user_can_create_notes(self):
         response = self.auth_client.post(self.url, data=self.form_data)
         self.assertRedirects(response, f'{self.redirect_url}')
         notes_count = Note.objects.count()
