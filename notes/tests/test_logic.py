@@ -131,3 +131,14 @@ class TestNoteEditDelete(TestCase):
                              errors=(self.notes.slug + WARNING))
         notes_count = Note.objects.count()
         self.assertEqual(notes_count, 1)
+
+    # def test_empty_slug(self):
+    #     self.form_data.pop('slug')
+    #     response = self.author_client.post(
+    #         reverse('notes:add'), data=self.form_data)
+    #     self.assertRedirects(response, reverse('notes:success'))
+    #     notes_count = Note.objects.count()
+    #     self.assertEqual(notes_count, 1)
+    #     new_note = Note.objects.get()
+    #     expected_slug = slugify(self.form_data['title'])
+    #     self.assertEqual(new_note.slug, expected_slug)
