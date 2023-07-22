@@ -30,9 +30,6 @@ class TestRoutes(TestCase):
     def test_pages_availability(self):
         urls = (
             ('notes:home', None),
-            # ('notes:add', None), не могу победить, надо думать
-            # ('notes:list', None),
-            # ('notes:success', None),
             ('users:login', None),
             ('users:logout', None),
             ('users:signup', None),
